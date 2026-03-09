@@ -1,2 +1,5 @@
 ir-datasets
 modin[dask]
+pyarrow
+psycopg2-binary
+python-dotenv
