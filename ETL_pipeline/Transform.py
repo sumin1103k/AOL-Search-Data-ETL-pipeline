@@ -8,8 +8,8 @@ def transform(data, yield_chunk_size = 100_000) -> pa.Table:
     # 쿼리 로그 데이터를 PyArrow 테이블로 변환
     for q in data:
 
-        # 쿼리 로그의 클릭 문서가 없을 경우 제외
-        if q.items is None:
+        # 쿼리 로그의 클릭 문서가 없거나 검색어가 없을 경우 제외
+        if q.items is None or q.query_id == "d41d8cd98f00b2":
             continue
         else:
             for item in q.items:
